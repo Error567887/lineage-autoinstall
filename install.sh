@@ -93,7 +93,7 @@ fastboot flash vendor_boot vendor_boot.img
 
  echo "if your phone rebooted to recovery, Using the volume and power buttons go to Factory Reset then Format data / factory reset and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one). "
 
-read -p "if you read write 'y'" choise
+read -p "if you read write 'y'" choice
 if [ "$choice" == "y" ]; then
  echo "ok"
  else
