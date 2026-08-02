@@ -102,5 +102,3 @@ fi
 
 read -p "Return to the main menu and turn on adb  (write 'y' after doing)" choise
 if [ "$choice" == "y" ]; then
-
-
