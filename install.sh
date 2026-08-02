@@ -16,7 +16,7 @@ echo "I hope you rebooted your phone to bootloader if not reboot and start over"
 echo ""
 fastboot devices 
 echo ""
-read -p "smartphone detected? (y/n) " choice
+read -rp "smartphone detected? (y/n) " choice
 echo ""
 if [ "$choice" == "y" ]; then
 	echo ""
@@ -27,7 +27,7 @@ else
 	exit
 fi
 
-read -p "Are you sure to unlock bootloader on your phone? (y/n)" choice
+read -rp "Are you sure to unlock bootloader on your phone? (y/n)" choice
 echo ""
 if [ "$choice" == "y" ]; then
 	echo ""
@@ -51,7 +51,7 @@ fi
 
 
 echo ""
-read -p "Ready to flash? (before starting, move the script to the firmware files or the firmware files to the script, as you wish)? (y/n) " choice
+read -rp "Ready to flash? (before starting, move the script to the firmware files or the firmware files to the script, as you wish)? (y/n) " choice
 if [ "$choice" == "y" ]; then
 echo "flashing vendor kernel boot"
 fastboot flash vendor_kernel_boot
@@ -68,7 +68,7 @@ fi
 
 #flasing vbmeta
 
-read -p "flash vbmeta with disabling verity/verification (relevant for pixel's)? (y/n)" choice
+read -rp "flash vbmeta with disabling verity/verification (relevant for pixel's)? (y/n)" choice
 if [ "$choice" == "y" ]; then
 
 fastboot --slot all --verbose --disable-verity --disable-verification flash vbmeta vbmeta.img
@@ -93,14 +93,14 @@ fastboot flash vendor_boot vendor_boot.img
 
  echo "if your phone rebooted to recovery, Using the volume and power buttons go to Factory Reset then Format data / factory reset and continue with the formatting process. This will remove encryption and delete all files stored in the internal storage, as well as format your cache partition (if you have one). "
 
-read -p "if you read write 'y'" choice
+read -rp "if you read write 'y'" choice
 if [ "$choice" == "y" ]; then
  echo "ok"
  else
  echo "ok"
 fi
 
-read -p "Return to the main menu and turn on adb  (write 'y' after doing)" choiсe
+read -rp "Return to the main menu and turn on adb  (write 'y' after doing)" choiсe
 if [ "$choice" = "y" ]; then
     echo "starting adb sideload..."
     adb sideload lineage.zip
