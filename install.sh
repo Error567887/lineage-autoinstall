@@ -101,7 +101,6 @@ if [ "$choice" == "y" ]; then
 fi
 
 read -p "Return to the main menu and turn on adb  (write 'y' after doing)" choiсe
-if [ "$choice" == "y" ]; then
 if [ "$choice" = "y" ]; then
     echo "starting adb sideload..."
     adb sideload lineage.zip
